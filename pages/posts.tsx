@@ -5,6 +5,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import {PostState} from "../store/types/post";
 import styled from "styled-components";
+import {PostsState} from "../store/types/posts";
 
 const MainContainer = styled.div`   
   transform: translate(-50%, -50%);
@@ -28,7 +29,7 @@ max-width: 700px;
 
 function Posts() {
 
-    const {posts} = useTypedSelector(state => state.posts)
+    const {posts}: any = useTypedSelector(state => state.posts)
     const {getPosts} = useActions()
     useEffect(() => {
         getPosts()

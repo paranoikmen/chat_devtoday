@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {getPosts} from "../store/actions/postsAction";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import styled from 'styled-components';
 import {PostState} from "../store/types/post";
+import {PostsState} from "../store/types/posts";
 
 const Main = styled.main`   
     transform: translate(-50%, -50%);
@@ -32,7 +33,7 @@ export default function Home() {
 
     const numberOfLastPosts: number = 5
 
-    const {posts} = useTypedSelector(state => state.posts)
+    const {posts}: any = useTypedSelector(state => state.posts)
 
     const {getPosts} = useActions()
     useEffect(() => {

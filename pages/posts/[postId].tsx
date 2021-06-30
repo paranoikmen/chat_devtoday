@@ -33,7 +33,7 @@ max-width: 700px;
 
 
 export default function (id: number) {
-    const {query} = useRouter()
+    const {query}:any = useRouter()
 
     const post: PostState = useTypedSelector(state => state.post)
 
