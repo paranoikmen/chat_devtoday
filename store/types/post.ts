@@ -4,7 +4,7 @@ export interface PostState {
     title: string,
     body: string,
     id: number,
-    comments: CommentState[],
+    comments?: CommentState[],
 }
 
 export interface PostResponseCreate {

@@ -1,8 +1,7 @@
+import {PostState} from "./post";
+
 export interface PostsState {
-    posts: {
-        id: number,
-        title: string,
-        body: string }[]
+    posts: PostState[]
 }
 
 export enum PostsActionsTypes {

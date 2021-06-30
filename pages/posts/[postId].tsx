@@ -32,7 +32,7 @@ max-width: 700px;
 `;
 
 
-export default function (id: number) {
+export default function Post(id: number) {
     const {query}:any = useRouter()
 
     const post: PostState = useTypedSelector(state => state.post)
@@ -47,13 +47,13 @@ export default function (id: number) {
             <Container><h2>Title:</h2>{post.title}</Container>
             <Container><h2>Description:</h2>{post.body}</Container>
             {
-                post.comments.length !== 0
+                post.comments!.length !== 0
                 &&
                 <div>
                     <h2>Comments:</h2>
                     <ul>
                         {
-                            post.comments.map((comment: CommentState) => (
+                            post.comments!.map((comment: CommentState) => (
                                 comment.body.length !== 0 &&
                                 <CommentContainer key={comment.id}>
                                     {comment.body}

@@ -33,7 +33,7 @@ export default function Home() {
 
     const numberOfLastPosts: number = 5
 
-    const {posts}: any = useTypedSelector(state => state.posts)
+    const {posts}: PostsState = useTypedSelector(state => state.posts)
 
     const {getPosts} = useActions()
     useEffect(() => {

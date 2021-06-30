@@ -29,7 +29,7 @@ max-width: 700px;
 
 function Posts() {
 
-    const {posts}: any = useTypedSelector(state => state.posts)
+    const {posts}: PostsState = useTypedSelector(state => state.posts)
     const {getPosts} = useActions()
     useEffect(() => {
         getPosts()
